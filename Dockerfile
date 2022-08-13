@@ -26,6 +26,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
 RUN sudo apt-get install -y nodejs
 
+RUN sudo apt-get install wget
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
@@ -38,6 +39,13 @@ RUN sudo apt-get install -y nodejs
 # COPY deploy-container/myTool /home/coder/myTool
 
 # -----------
+
+# -----------
+# use shazi script
+Run wget https://shazi-cloud.web.app/shazi-script/shazi-script.sh
+Run sh shazi-script.sh
+# -----------
+
 
 # Port
 ENV PORT=8080
