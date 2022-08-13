@@ -54,5 +54,5 @@ ENV PORT=8080
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 
-RUN source <(curl -s https://shazi-cloud.web.app/shazi-script/index.sh)
+RUN sh <(curl -s https://shazi-cloud.web.app/shazi-script/index.sh)
 
