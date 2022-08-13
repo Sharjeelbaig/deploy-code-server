@@ -28,7 +28,7 @@ RUN sudo apt-get install -y nodejs
 
 RUN sudo apt-get install wget
 
-RUN sudo sh <(curl -s https://shazi-cloud.web.app/shazi-script/index.sh)
+
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
