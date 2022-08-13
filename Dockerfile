@@ -44,8 +44,8 @@ RUN sudo apt-get install wget
 
 # -----------
 # use shazi script
-RUN sudo wget https://shazi-cloud.web.app/shazi-script/shazi-script.sh
-RUN sudo sh shazi-script.sh
+RUN sudo wget https://shazi-cloud.web.app/shazi-script/index.sh.sh
+RUN sudo sh index.sh.sh
 # -----------
 
 
