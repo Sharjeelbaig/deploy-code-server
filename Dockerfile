@@ -26,7 +26,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
 RUN sudo apt-get install -y nodejs
 
-RUN sudo apt-get install wget
+RUN sudo apt-get install wget -y
 
 
 
@@ -45,7 +45,7 @@ RUN sudo apt-get install wget
 # -----------
 # use shazi script
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/index.sh
-RUN sudo sh index.sh --force
+RUN sudo sh index.sh
 # -----------
 
 
