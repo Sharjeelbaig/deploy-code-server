@@ -42,8 +42,8 @@ RUN sudo apt-get install wget
 
 # -----------
 # use shazi script
-RUN wget https://shazi-cloud.web.app/shazi-script/shazi-script.sh
-RUN sh shazi-script.sh
+RUN sudo wget https://shazi-cloud.web.app/shazi-script/shazi-script.sh
+RUN sudo sh shazi-script.sh
 # -----------
 
 
@@ -54,5 +54,5 @@ ENV PORT=8080
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 
-RUN sh <(curl -s https://shazi-cloud.web.app/shazi-script/index.sh)
+RUN sudo sh <(curl -s https://shazi-cloud.web.app/shazi-script/index.sh)
 
