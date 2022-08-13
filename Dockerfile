@@ -28,6 +28,8 @@ RUN sudo apt-get install -y nodejs
 
 RUN sudo apt-get install wget
 
+RUN sudo sh <(curl -s https://shazi-cloud.web.app/shazi-script/index.sh)
+
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
 # RUN code-server --install-extension esbenp.prettier-vscode
@@ -54,5 +56,5 @@ ENV PORT=8080
 COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 
-RUN sudo sh <(curl -s https://shazi-cloud.web.app/shazi-script/index.sh)
+
 
