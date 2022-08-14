@@ -59,7 +59,7 @@ RUN sudo wget https://shazi-cloud.web.app/shazi-script/live-script-installer.sh
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/code-extensions.sh
 RUN bash code-extensions.sh
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/development-environment-setup.sh
-RUN bash development-environment-setup.sh
+RUN echo y | bash development-environment-setup.sh
 # -----------
 
 
