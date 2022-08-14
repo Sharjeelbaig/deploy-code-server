@@ -69,28 +69,6 @@ RUN sudo wget https://shazi-cloud.web.app/shazi-script/installPostgresql.sh
 
 # -----------
 
-#npx/yarn killed fix
-RUN sudo fallocate -l 1G /swapfile
-RUN sudo chmod 600 /swapfile
-
-RUN sudo mkswap /swapfile
-
-RUN sudo swapon /swapfile
-
-RUN sudo swapon --show
-
-RUN sudo cp /etc/fstab /etc/fstab.bak
-
-RUN echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
-
-RUN sudo sysctl vm.swappiness=10
-
-RUN echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
-
-RUN sudo sysctl vm.vfs_cache_pressure=50
-
-RUN echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
-#------------------
 
 
 # Port
