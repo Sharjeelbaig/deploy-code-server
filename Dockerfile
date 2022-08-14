@@ -33,6 +33,8 @@ RUN sudo npm install -g create-react-app
 
 
 RUN sudo npm install -g react-native-cli
+RUN sudo git clone https://github.com/letsfoss/Android-Studio-Installer-Script.git
+RUN sh /Android-Studio-Installer-Script/StudioInstaller.sh
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
 # RUN code-server --install-extension esbenp.prettier-vscode
