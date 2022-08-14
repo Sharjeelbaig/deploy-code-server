@@ -58,6 +58,25 @@ RUN code-server --install-extension segerdekort.angular-cli
 RUN code-server --install-extension Dart-Code.flutter
 RUN code-server --install-extension Dart-Code.dart-code
 
+RUN code-server --install-extension jsayol.firebase-explorer
+RUN code-server --install-extension hasanakg.firebase-snippets
+RUN code-server --install-extension acchu99.firebase-react-snippets
+RUN code-server --install-extension chris-noring.node-snippets
+RUN code-server --install-extension ExpressSnippets.vscode-express-snippets
+RUN code-server --install-extension ms-ossdata.vscode-postgresql
+RUN code-server --install-extension dennisvhest.npm-browser
+RUN code-server --install-extension hollowtree.vue-snippets
+RUN code-server --install-extension samyakbumb.samyak
+RUN code-server --install-extension dracula-theme.theme-dracula
+RUN code-server --install-extension RobbOwen.synthwave-vscode
+RUN code-server --install-extension enkia.tokyo-night
+RUN code-server --install-extension whizkydee.material-palenight-theme
+RUN code-server --install-extension arcticicestudio.nord-visual-studio-code
+RUN code-server --install-extension brenix.hacker-theme
+RUN code-server --install-extension  PKief.material-icon-theme
+RUN code-server --install-extension monokai.theme-monokai-pro-vscode
+RUN code-server --install-extension teabyii.ayu
+RUN code-server --install-extension be5invis.vscode-icontheme-nomo-dark
 
 #installing java
 RUN sudo apt install software-properties-common -y
