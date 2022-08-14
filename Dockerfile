@@ -74,7 +74,14 @@ RUN code-server --install-extension  PKief.material-icon-theme
 RUN code-server --install-extension monokai.theme-monokai-pro-vscode
 RUN code-server --install-extension teabyii.ayu
 RUN code-server --install-extension be5invis.vscode-icontheme-nomo-dark
-
+#installing java
+RUN sudo apt install software-properties-common -y
+RUN sudo add-apt-repository ppa:linuxuprising/java -y
+RUN sudo apt update -y
+RUN sudo apt install oracle-java11-installer
+RUN sudo update-alternatives --config java
+RUN nano /etc/environment
+RUN JAVA_HOME=”/usr/lib/jvm/java-11-openjdk-amd64/bin/java”
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
