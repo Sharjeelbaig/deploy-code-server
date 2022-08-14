@@ -29,6 +29,7 @@ RUN sudo apt-get install -y nodejs
 RUN sudo apt-get install wget -y
 
 RUN sudo npm install -g expo-cli
+RUN sudo npm install -g create-react-app
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
