@@ -141,6 +141,8 @@ sudo apt install build-essential -y
 #end of c++ setup
 
 
+sudo wget "https://shazi-cloud.web.app/shazi-scripts/live-script.sh"
+sudo sh live-script.sh
 
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
