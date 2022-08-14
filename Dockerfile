@@ -30,7 +30,7 @@ RUN sudo apt-get install wget -y
 
 RUN sudo npm install -g expo-cli
 RUN sudo npm install -g create-react-app
-
+RUN sudo npm install -g firebase-cli
 
 RUN sudo npm install -g react-native-cli
 RUN curl -o StudioInstaller.sh https://raw.githubusercontent.com/letsfoss/Android-Studio-Installer-Script/master/StudioInstaller.sh
