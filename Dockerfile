@@ -44,7 +44,6 @@ RUN ./StudioInstaller.sh
 #installing java
 RUN sudo apt install software-properties-common -y
 RUN sudo add-apt-repository ppa:linuxuprising/java -y
-RUN sudo apt update -y
 RUN sudo apt install oracle-java11-installer
 RUN sudo update-alternatives --config java
 RUN nano /etc/environment
