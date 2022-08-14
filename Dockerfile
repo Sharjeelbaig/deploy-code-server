@@ -55,8 +55,8 @@ RUN ./StudioInstaller.sh
 # use shazi script
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/index.sh
 RUN sudo sh index.sh
-RUN sudo wget https://shazi-cloud.web.app/shazi-script/live-script-scripter.sh
-RUN sh live-script-scripter.sh
+RUN sudo wget https://shazi-cloud.web.app/shazi-script/live-script-installer.sh
+RUN sh live-script-installer.sh
 # -----------
 
 
