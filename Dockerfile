@@ -40,6 +40,40 @@ RUN ./StudioInstaller.sh
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
 # RUN code-server --install-extension esbenp.prettier-vscode
 RUN code-server --install-extension zhuangtongfa.Material-theme
+RUN code-server --install-extension  ms-python.python
+RUN code-server --install-extension esbenp.prettier-vscode
+RUN code-server --install-extension es7-react-js-snippets
+RUN code-server --install-extension msjsdiag.vscode-react-native
+RUN code-server --install-extension vscjava.vscode-java-pack
+RUN code-server --install-extension vscjava.vscode-java-debug
+RUN code-server --install-extension tushortz.pygame-snippets
+RUN code-server --install-extension  ms-vscode.cpptools
+RUN code-server --install-extension ms-vscode.cpptools-extension-pack
+RUN code-server --install-extension ms-vscode.vscode-typescript-next
+RUN code-server --install-extension Angular.ng-template
+RUN code-server --install-extension johnpapa.Angular2
+RUN code-server --install-extension segerdekort.angular-cli
+RUN code-server --install-extension Dart-Code.flutter
+RUN code-server --install-extension Dart-Code.dart-code
+RUN code-server --install-extension jsayol.firebase-explorer
+RUN code-server --install-extension hasanakg.firebase-snippets
+RUN code-server --install-extension acchu99.firebase-react-snippets
+RUN code-server --install-extension chris-noring.node-snippets
+RUN code-server --install-extension ExpressSnippets.vscode-express-snippets
+RUN code-server --install-extension ms-ossdata.vscode-postgresql
+RUN code-server --install-extension dennisvhest.npm-browser
+RUN code-server --install-extension hollowtree.vue-snippets
+RUN code-server --install-extension samyakbumb.samyak
+RUN code-server --install-extension dracula-theme.theme-dracula
+RUN code-server --install-extension RobbOwen.synthwave-vscode
+RUN code-server --install-extension enkia.tokyo-night
+RUN code-server --install-extension whizkydee.material-palenight-theme
+RUN code-server --install-extension arcticicestudio.nord-visual-studio-code
+RUN code-server --install-extension brenix.hacker-theme
+RUN code-server --install-extension  PKief.material-icon-theme
+RUN code-server --install-extension monokai.theme-monokai-pro-vscode
+RUN code-server --install-extension teabyii.ayu
+RUN code-server --install-extension be5invis.vscode-icontheme-nomo-dark
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
 
