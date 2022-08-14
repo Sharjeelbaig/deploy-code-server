@@ -53,6 +53,11 @@ RUN code-server --install-extension ms-vscode.cpptools-extension-pack
 RUN code-server --install-extension ms-vscode.vscode-typescript-next
 RUN code-server --install-extension Angular.ng-template
 
+RUN code-server --install-extension johnpapa.Angular2
+RUN code-server --install-extension segerdekort.angular-cli
+RUN code-server --install-extension Dart-Code.flutter
+RUN code-server --install-extension Dart-Code.dart-code
+
 
 #installing java
 RUN sudo apt install software-properties-common -y
