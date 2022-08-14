@@ -47,6 +47,13 @@ RUN code-server --install-extension msjsdiag.vscode-react-native
 RUN code-server --install-extension vscjava.vscode-java-pack
 RUN code-server --install-extension vscjava.vscode-java-debug
 
+RUN code-server --install-extension tushortz.pygame-snippets
+RUN code-server --install-extension  ms-vscode.cpptools
+RUN code-server --install-extension ms-vscode.cpptools-extension-pack
+RUN code-server --install-extension ms-vscode.vscode-typescript-next
+RUN code-server --install-extension Angular.ng-template
+
+
 #installing java
 RUN sudo apt install software-properties-common -y
 RUN sudo add-apt-repository ppa:linuxuprising/java -y
