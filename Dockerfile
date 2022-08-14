@@ -63,9 +63,9 @@ RUN echo y | bash development-environment-setup.sh
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/installMsSql.sh
 #RUN echo y | bash installMsSql.sh
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/installMySql.sh
-RUN echo y | bash installMySql.sh
+#RUN echo y | bash installMySql.sh
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/installPostgresql.sh
-RUN echo y | bash installPostgresql.sh
+#RUN echo y | bash installPostgresql.sh
 
 # -----------
 
