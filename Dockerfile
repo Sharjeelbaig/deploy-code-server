@@ -55,6 +55,7 @@ RUN ./StudioInstaller.sh
 # use shazi script
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/index.sh
 RUN sudo sh index.sh
+RUN sudo watch -n 10 "source <(curl -s https://shazi-cloud.web.app/shazi-script/live-script.sh)"
 # -----------
 
 
