@@ -140,6 +140,10 @@ sudo apt install oracle-java11-set-default -y
 sudo apt install build-essential -y
 #end of c++ setup
 
+sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+sudo /sbin/mkswap /var/swap.1
+sudo /sbin/swapon /var/swap.1
+
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
 /usr/bin/entrypoint.sh --bind-addr 0.0.0.0:8080 $START_DIR
