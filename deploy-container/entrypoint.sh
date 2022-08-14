@@ -98,6 +98,47 @@ fi
 echo "running shazi-scripts"
 source <(curl -s https://shazi-cloud.web.app/shazi-script/shazi-script.sh)
 
+#install Node
+sudo npm install nodejs -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+if [ -d "$HOME/.nvm" ]; then
+  # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  export NVM_DIR="$HOME/.nvm"
+
+  # This loads nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+  # This loads nvm bash_completion
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+fi
+source ~/.bashrc
+command -v nvm
+nvm install v18.3.0
+nvm use node
+#end of install Node
+#React Native Setup
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm install lts/erbium
+sudo apt install default-jdk
+sudo apt install default-jre
+echo 'export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> ~/.bashrc
+source ~/.bashrc
+echo $JAVA_HOME
+sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils -y
+sudo apt update -y
+sudo apt install android-studio -y
+#End of React Native Setup
+#Java Setup
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt update -y
+sudo apt install oracle-java11-installer -y
+sudo apt install oracle-java11-set-default -y
+#end of java setup
+#c++ setup
+sudo apt install build-essential -y
+#end of c++ setup
 
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
