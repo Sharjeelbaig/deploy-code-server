@@ -28,9 +28,7 @@ RUN sudo apt-get install -y nodejs
 
 RUN sudo apt-get install wget -y
 
-RUN sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
-RUN sudo /sbin/mkswap /var/swap.1
-RUN sudo /sbin/swapon /var/swap.1
+
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
