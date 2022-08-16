@@ -76,7 +76,8 @@ RUN sudo apt install snapd -y
 RUN sudo wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.5-stable.tar.xz
 RUN sudo echo y | tar xf flutter_linux_3.0.5-stable.tar.xz
 RUN export PATH="$PATH:`pwd`/flutter/bin"
-
+#installing flutter
+RUN echo y | sudo apt-get install android-tools-adb android-tools-fastboot
 
 
 # Port
