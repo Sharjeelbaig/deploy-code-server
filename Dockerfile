@@ -75,7 +75,7 @@ RUN sudo apt install snapd -y
 #installing flutter
 RUN sudo wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.5-stable.tar.xz
 RUN sudo echo y | tar xf flutter_linux_3.0.5-stable.tar.xz
-RUN sudo export PATH="$PATH:`pwd`/flutter/bin"
+RUN export PATH="$PATH:`pwd`/flutter/bin"
 
 
 
