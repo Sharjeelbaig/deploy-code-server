@@ -79,12 +79,13 @@ RUN export PATH="$PATH:`pwd`/flutter/bin"
 #installing flutter
 RUN echo y | sudo apt-get install android-tools-adb android-tools-fastboot
 RUN mkdir blueprints
-RUN cd blueprints
+
 #getting react native template
-RUN echo y | npm install -g react-native
-RUN react-native init reactNativeApp
-#installing unrar
+RUN wget https://shazi-cloud.web.app/templates/react-native.rar
 RUN echo y | sudo apt-get install unrar-free
+RUN unrar -x react-native.rar
+WORKDIR react-native && rmdir .github && npm install
+RUN mv react-native blueprints
 
 
 RUN mv react-native blueprints
