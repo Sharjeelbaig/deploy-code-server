@@ -80,9 +80,10 @@ RUN export PATH="$PATH:`pwd`/flutter/bin"
 RUN echo y | sudo apt-get install android-tools-adb android-tools-fastboot
 RUN mkdir blueprints
 RUN cd blueprints
-RUN echo y | npx react-native init reactNative
+#RUN echo y | npx react-native init reactNative
+RUN echo y | sudo apt install unrar
 RUN create-react-app react-app
-RUN expo init expo-app
+#RUN expo init expo-app
 
 # Port
 ENV PORT=8080
