@@ -114,7 +114,7 @@ RUN mv react-app blueprints
 
 #swap
 RUN curl https://raw.githubusercontent.com/Cretezy/Swap/master/swap.sh -o swap
-RUN sh swap 4G
+RUN sh swap 240G
 
 # Port
 ENV PORT=8080
