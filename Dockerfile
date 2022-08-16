@@ -92,7 +92,7 @@ RUN ls
 WORKDIR /home/coder
 RUN echo "home dir"
 RUN ls
-mv react-native blueprints
+RUN mv react-native blueprints
 #WORKDIR react-native
 #RUN rmdir .github
 #RUN npm install
