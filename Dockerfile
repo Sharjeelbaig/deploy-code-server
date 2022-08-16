@@ -44,8 +44,7 @@ RUN ./StudioInstaller.sh
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-#RUN sudo apt update -y && sudo apt upgrade -y
-#RUN sudo apt install snapd
+
 RUN sudo apt install python3-pip -y
 
 # Copy files: 
@@ -71,7 +70,8 @@ RUN sudo wget https://shazi-cloud.web.app/shazi-script/installPostgresql.sh
 
 # -----------
 
-
+RUN sudo apt update -y && sudo apt upgrade -y
+RUN sudo apt install snapd
 
 # Port
 ENV PORT=8080
