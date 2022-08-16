@@ -46,7 +46,7 @@ RUN ./StudioInstaller.sh
 # RUN sudo apt-get install -y ubuntu-make
 #RUN sudo apt update -y && sudo apt upgrade -y
 #RUN sudo apt install snapd
-
+RUN sudo apt install python3-pip
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
