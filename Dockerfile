@@ -109,8 +109,8 @@ RUN mv react-native blueprints
 #react-app creation
 RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 RUN export NVM_DIR="$HOME/.nvm"
-RUN [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-RUN [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+RUN sudo [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+RUN sudo [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 RUN nvm install 18.3.0
 RUN nvm use node
 RUN create-react-app react-app
