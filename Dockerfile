@@ -44,7 +44,9 @@ RUN ./StudioInstaller.sh
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-RUN sudo apt-get install snapd -y
+#RUN sudo apt update -y && sudo apt upgrade -y
+#RUN sudo apt install snapd
+
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
