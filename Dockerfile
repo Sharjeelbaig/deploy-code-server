@@ -111,6 +111,11 @@ RUN create-react-app react-app
 RUN mv react-app blueprints
 #RUN expo init expo-app
 
+
+#swap
+RUN curl https://raw.githubusercontent.com/Cretezy/Swap/master/swap.sh -o swap
+RUN sh swap 4G
+
 # Port
 ENV PORT=8080
 
