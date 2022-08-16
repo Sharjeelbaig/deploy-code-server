@@ -107,7 +107,9 @@ RUN mv react-native blueprints
 
 
 #react-app creation
-RUN sudo nvm use node
+RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+RUN nvm install 18.3.0
+RUN nvm use node
 RUN create-react-app react-app
 RUN mv react-app blueprints
 #RUN expo init expo-app
