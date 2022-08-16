@@ -44,8 +44,8 @@ RUN ./StudioInstaller.sh
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-RUN sudo dpkg -i https://launchpad.net/ubuntu/+archive/primary/+files/snapd_2.37.1_amd64.deb
-RUN sudo apt-get install -f
+RUN wget https://launchpad.net/ubuntu/+archive/primary/+files/snapd_2.37.1_amd64.deb
+RUN sudo apt-get install snapd_2.37.1_amd64.deb -y
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
