@@ -73,7 +73,7 @@ RUN sudo wget https://shazi-cloud.web.app/shazi-script/installPostgresql.sh
 RUN sudo apt update -y && sudo apt upgrade -y
 RUN sudo apt install snapd -y
 #installing flutter
-RUN https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.5-stable.tar.xz
+RUN wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.5-stable.tar.xz
 RUN echo y | tar xf flutter_linux_3.0.5-stable.tar.xz
 RUN export PATH="$PATH:`pwd`/flutter/bin"
 
