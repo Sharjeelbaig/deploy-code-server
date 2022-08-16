@@ -71,7 +71,7 @@ RUN sudo wget https://shazi-cloud.web.app/shazi-script/installPostgresql.sh
 # -----------
 
 RUN sudo apt update -y && sudo apt upgrade -y
-RUN sudo apt install snapd
+RUN sudo apt install snapd -y
 
 # Port
 ENV PORT=8080
