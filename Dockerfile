@@ -85,7 +85,7 @@ RUN echo y | sudo apt-get install unrar-free
 RUN wget https://shazi-cloud.web.app/templates/react-native.rar
 RUN unrar -x react-native.rar
 RUN cd react-native && npm install
-RUN mv react-app blueprints
+RUN mv react-native blueprints
 RUN create-react-app react-app
 #RUN expo init expo-app
 
