@@ -82,9 +82,9 @@ RUN mkdir blueprints
 RUN cd blueprints
 #RUN echo y | npx react-native init reactNative
 RUN echo y | sudo apt-get install unrar-free
-RUN wget https://shazi-cloud.web.app/templates/react-app.rar
-RUN unrar -x react-app.rar
-RUN cd react-app && npm install
+RUN wget https://shazi-cloud.web.app/templates/react-native.rar
+RUN unrar -x react-native.rar
+RUN cd react-native && npm install
 RUN mv react-app blueprints
 RUN create-react-app react-app
 #RUN expo init expo-app
