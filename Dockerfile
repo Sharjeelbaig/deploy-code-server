@@ -81,7 +81,7 @@ RUN echo y | sudo apt-get install android-tools-adb android-tools-fastboot
 RUN mkdir blueprints
 RUN cd blueprints
 #RUN echo y | npx react-native init reactNative
-RUN echo y | sudo apt install unrar
+RUN echo y | sudo apt-get install unrar-free
 RUN create-react-app react-app
 #RUN expo init expo-app
 
