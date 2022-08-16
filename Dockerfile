@@ -85,7 +85,7 @@ RUN wget https://shazi-cloud.web.app/templates/react-native.rar
 RUN echo y | sudo apt-get install unrar-free
 RUN unrar -x react-native.rar
 WORKDIR /home/coder/react-native
-RUN npm install
+RUN sudo npm install
 RUN echo "react-native dir"
 RUN ls
 WORKDIR /home/coder
