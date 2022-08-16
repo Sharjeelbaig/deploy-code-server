@@ -107,7 +107,7 @@ RUN mv react-native blueprints
 
 
 #react-app creation
-RUN nvm use node
+RUN sudo nvm use node
 RUN create-react-app react-app
 RUN mv react-app blueprints
 #RUN expo init expo-app
