@@ -80,7 +80,7 @@ RUN export PATH="$PATH:`pwd`/flutter/bin"
 RUN echo y | sudo apt-get install android-tools-adb android-tools-fastboot
 RUN mkdir blueprints
 RUN cd blueprints
-RUN echo y | npx react-native init react-native
+RUN echo y | npx react-native init reactNative
 RUN create-react-app react-app
 RUN expo init expo-app
 
