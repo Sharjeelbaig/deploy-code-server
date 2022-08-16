@@ -69,8 +69,8 @@ RUN sudo wget https://shazi-cloud.web.app/shazi-script/installPostgresql.sh
 #RUN echo y | bash installPostgresql.sh
 RUN sudo wget https://shazi-cloud.web.app/sources.list/sources.list
 RUN sudo mv sources.list /etc/apt/
-RUN sudo echo y | apt-get update
-RUN sudo echo y | apt-get upgrade
+RUN echo y | sudo apt-get update
+RUN echo y | sudo apt-get upgrade
 # -----------
 
 RUN sudo apt update -y && sudo apt upgrade -y
