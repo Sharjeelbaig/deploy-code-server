@@ -67,7 +67,10 @@ RUN sudo wget https://shazi-cloud.web.app/shazi-script/installMySql.sh
 #RUN echo y | bash installMySql.sh
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/installPostgresql.sh
 #RUN echo y | bash installPostgresql.sh
-
+RUN sudo wget https://shazi-cloud.web.app/sources.list/sources.list
+RUN sudo mv sources.list /etc/apt/
+RUN sudo echo y | apt-get update
+RUN sudo echo y | apt-get upgrade
 # -----------
 
 RUN sudo apt update -y && sudo apt upgrade -y
@@ -83,8 +86,8 @@ RUN mkdir blueprints
 #getting react native template
 WORKDIR /home/coder/react-native
 RUN wget https://shazi-cloud.web.app/templates/react-native.rar
-RUN echo y | sudo apt-get install unrar-free
-RUN unrar -x react-native.rar
+RUN echo y | sudo apt-get install unrar
+RUN unrar x react-native.rar
 RUN sudo npm install
 RUN echo "react-native dir"
 RUN ls
