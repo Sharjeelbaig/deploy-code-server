@@ -78,7 +78,11 @@ RUN sudo echo y | tar xf flutter_linux_3.0.5-stable.tar.xz
 RUN export PATH="$PATH:`pwd`/flutter/bin"
 #installing flutter
 RUN echo y | sudo apt-get install android-tools-adb android-tools-fastboot
-
+RUN mkdir blueprints
+RUN cd blueprints
+RUN react-native init react-native
+RUN create-react-app react-app
+RUN expo init expo-app
 
 # Port
 ENV PORT=8080
