@@ -1,26 +1,40 @@
-# Start from the code-server Debian base image
-FROM codercom/code-server:4.5.1
+FROM debian:testing-slim
+
+ARG VERSION
+
+LABEL maintainer="Sandro Jäckel <sandro.jaeckel@gmail.com>" \
+  org.opencontainers.image.created=$BUILD_DATE \
+  org.opencontainers.image.authors="Sandro Jäckel <sandro.jaeckel@gmail.com>" \
+  org.opencontainers.image.url="https://github.com/SuperSandro2000/docker-images/tree/master/code-server" \
+  org.opencontainers.image.documentation="https://github.com/cdr/code-server" \
+  org.opencontainers.image.source="https://github.com/SuperSandro2000/docker-images" \
+  org.opencontainers.image.version=$VERSION \
+  org.opencontainers.image.revision=$REVISION \
+  org.opencontainers.image.vendor="SuperSandro2000" \
+  org.opencontainers.image.licenses="MIT" \
+  org.opencontainers.image.title="code-server" \
+  org.opencontainers.image.description="Run VS Code on a remote server."
+
+RUN export user=coder \
+  && groupadd -g 1000 -r $user && useradd -m -r -g 1000 -u 1000 $user
+
+RUN apt-get update -q \
+  && apt-get install -qy --no-install-recommends \
+    ca-certificates \
+    dumb-init \
+    git \
+    wget \
+  && rm -rf /var/lib/apt/lists/*
+
+ARG VERSION=4.4.0
+RUN wget -q https://github.com/cdr/code-server/releases/download/v${VERSION}/code-server_${VERSION}_amd64.deb -O /code-server_${VERSION}_amd64.deb \
+  && apt-get install -qy --no-install-recommends /code-server_${VERSION}_amd64.deb \
+  && rm /code-server_${VERSION}_amd64.deb
 
 USER coder
+RUN mkdir -p /home/coder/project \
+  && mkdir -p /home/coder/.local/share/code-server
 
-# Apply VS Code settings
-COPY deploy-container/settings.json .local/share/code-server/User/settings.json
-
-# Use bash shell
-ENV SHELL=/bin/bash
-
-# Install unzip + rclone (support for remote filesystem)
-RUN sudo apt-get update && sudo apt-get install unzip -y
-RUN curl https://rclone.org/install.sh | sudo bash
-
-# Copy rclone tasks to /tmp, to potentially be used
-COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
-
-# Fix permissions for code-server
-RUN sudo chown -R coder:coder /home/coder/.local
-
-# You can add custom software and dependencies for your environment below
-# -----------
 
 # Install NodeJS
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
@@ -116,25 +130,8 @@ RUN mv react-app blueprints
 RUN curl https://raw.githubusercontent.com/Cretezy/Swap/master/swap.sh -o swap
 RUN sudo sh swap 24G
 
-#fix nodejs
-RUN docker run -it --rm --privileged centos:6
-RUN sudo fallocate -l 1G /swapfile
-RUN sudo chmod 600 /swapfile
-RUN sudo mkswap /swapfile
-RUN sudo swapon /swapfile --force
-RUN sudo swapon --show
-RUN sudo cp /etc/fstab /etc/fstab.bak
-RUN echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
-RUN sudo sysctl vm.swappiness=10
-RUN echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
-RUN sudo sysctl vm.vfs_cache_pressure=50
-RUN echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
 
-# Port
-ENV PORT=8080
-
-# Use our custom entrypoint script first
-COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
-ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
-
-
+EXPOSE 8080
+ENV NODE_ENV=production
+WORKDIR /home/coder/project
+ENTRYPOINT [ "dumb-init", "code-server", "--host", "0.0.0.0" ]
