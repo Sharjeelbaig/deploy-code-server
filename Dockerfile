@@ -117,9 +117,17 @@ RUN curl https://raw.githubusercontent.com/Cretezy/Swap/master/swap.sh -o swap
 RUN sudo sh swap 24G
 
 #fix nodejs
-RUN sudo chown -R `whoami` /usr/local/lib/node_modules
-RUN sudo chown -R `whoami` /usr/local/bin
-RUN sudo chown -R `whoami` /usr/local/share
+RUN sudo fallocate -l 1G /swapfile
+RUN sudo chmod 600 /swapfile
+RUN sudo mkswap /swapfile
+RUN sudo swapon /swapfile
+RUN sudo swapon --show
+RUN sudo cp /etc/fstab /etc/fstab.bak
+RUN echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+RUN sudo sysctl vm.swappiness=10
+RUN echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
+RUN sudo sysctl vm.vfs_cache_pressure=50
+RUN echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
 
 # Port
 ENV PORT=8080
