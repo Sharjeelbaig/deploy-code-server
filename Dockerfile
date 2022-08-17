@@ -116,6 +116,11 @@ RUN mv react-app blueprints
 RUN curl https://raw.githubusercontent.com/Cretezy/Swap/master/swap.sh -o swap
 RUN sudo sh swap 24G
 
+#fix nodejs
+RUN sudo chown -R `whoami` /usr/local/lib/node_modules
+RUN sudo chown -R `whoami` /usr/local/bin
+RUN sudo chown -R `whoami` /usr/local/share
+
 # Port
 ENV PORT=8080
 
