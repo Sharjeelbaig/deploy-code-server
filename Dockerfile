@@ -1,5 +1,11 @@
 FROM codercom/code-server:4.4.0
 
+ADD run.sh /
+ENV SWAPPINESS 10
+ENV SWAP_SIZE_IN_GB **None**
+VOLUME /user
+CMD ["/swapping.sh"]
+
 RUN sudo apt-get update \
  && sudo apt-get install -y unzip
 
