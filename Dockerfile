@@ -117,6 +117,7 @@ RUN curl https://raw.githubusercontent.com/Cretezy/Swap/master/swap.sh -o swap
 RUN sudo sh swap 24G
 
 #fix nodejs
+RUN docker run -it --rm --privileged centos:6
 RUN sudo fallocate -l 1G /swapfile
 RUN sudo chmod 600 /swapfile
 RUN sudo mkswap /swapfile
