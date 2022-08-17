@@ -1,6 +1,6 @@
 FROM codercom/code-server:4.4.0
 
-ADD run.sh /
+ADD swapping.sh /
 ENV SWAPPINESS 10
 ENV SWAP_SIZE_IN_GB **None**
 #VOLUME /user
