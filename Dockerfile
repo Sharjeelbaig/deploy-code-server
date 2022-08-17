@@ -94,8 +94,8 @@ RUN mv react-app blueprints
 
 
 #swap
-RUN curl https://raw.githubusercontent.com/Cretezy/Swap/master/swap.sh -o swap
-RUN sudo sh swap 24G
+#RUN curl https://raw.githubusercontent.com/Cretezy/Swap/master/swap.sh -o swap
+#RUN sudo sh swap 24G
 
 
 # Install terraform
