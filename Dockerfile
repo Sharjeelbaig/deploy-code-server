@@ -131,3 +131,5 @@ RUN helm version
 # fluxcli install
 RUN curl -s https://fluxcd.io/install.sh | sudo bash
 RUN flux --version
+#Changing working dir
+WORKDIR /home/coder/main
