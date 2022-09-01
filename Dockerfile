@@ -1,6 +1,5 @@
 FROM codercom/code-server:4.4.0
 
-
 ADD swapping.sh /
 ENV SWAPPINESS 10
 ENV SWAP_SIZE_IN_GB **None**
