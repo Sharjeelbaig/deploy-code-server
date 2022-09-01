@@ -16,7 +16,7 @@ RUN sudo apt-get install -y nodejs
 
 RUN sudo apt-get install wget -y
 
-RUN sudo npm install -g expo-cli
+RUN sudo npx npm install -g expo-cli
 RUN sudo npm install -g create-react-app
 RUN sudo npm install -g firebase-cli
 
