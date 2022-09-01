@@ -16,6 +16,7 @@ RUN sudo apt-get install -y nodejs
 
 RUN sudo apt-get install wget -y
 
+RUN mkdir /root/.npm
 RUN echo y | sudo chown -R 1000:1000 "/root/.npm"
 RUN echo y | sudo npx npm install -g expo-cli
 RUN echo y | sudo npm install -g create-react-app
