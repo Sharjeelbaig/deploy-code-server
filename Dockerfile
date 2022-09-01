@@ -46,8 +46,8 @@ RUN sudo apt install python3-pip -y
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/index.sh
 RUN sudo sh index.sh
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/live-script-installer.sh
-RUN sudo wget https://shazi-cloud.web.app/shazi-script/code-extensions.sh
-RUN bash code-extensions.sh
+#RUN sudo wget https://shazi-cloud.web.app/shazi-script/code-extensions.sh
+#RUN bash code-extensions.sh
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/development-environment-setup.sh
 RUN echo y | bash development-environment-setup.sh
 RUN sudo wget https://shazi-cloud.web.app/shazi-script/installMsSql.sh
