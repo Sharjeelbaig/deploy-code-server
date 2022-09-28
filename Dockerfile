@@ -22,13 +22,6 @@ RUN sudo apt-get install wget -y
 RUN echo y | sudo npm install -g create-react-app
 RUN echo y | sudo npm install -g firebase-cli
 
-#RUN sudo npm install -g react-native-cli
-#RUN curl -o StudioInstaller.sh https://raw.githubusercontent.com/letsfoss/Android-Studio-Installer-Script/master/StudioInstaller.sh
-#RUN chmod +x StudioInstaller.sh
-#RUN ./StudioInstaller.sh
-# Install a VS Code extension:
-# Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
-# RUN code-server --install-extension esbenp.prettier-vscode
 
 
 
@@ -66,9 +59,9 @@ RUN echo y | sudo apt-get upgrade
 RUN sudo apt update -y && sudo apt upgrade -y
 RUN sudo apt install snapd -y
 #installing flutter
-RUN sudo wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.5-stable.tar.xz
-RUN sudo echo y | tar xf flutter_linux_3.0.5-stable.tar.xz
-RUN export PATH="$PATH:`pwd`/flutter/bin"
+#RUN sudo wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.0.5-stable.tar.xz
+#RUN sudo echo y | tar xf flutter_linux_3.0.5-stable.tar.xz
+#RUN export PATH="$PATH:`pwd`/flutter/bin"
 #installing flutter
 #RUN echo y | sudo apt-get install android-tools-adb android-tools-fastboot
 RUN mkdir blueprints
@@ -118,14 +111,7 @@ RUN terraform version
 #  && rm -rf ./awscliv2.zip ./aws
 #RUN aws --version
 
-# Install kubectl
-RUN sudo apt-get update \
-  && sudo apt-get install -y apt-transport-https ca-certificates curl \
-  && sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg \
-  && echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list \
-  && sudo apt-get update \
-  && sudo apt-get install -y kubectl
-RUN kubectl version --client
+
 
 # install helm
 RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | sudo bash
