@@ -22,10 +22,10 @@ RUN sudo apt-get install wget -y
 RUN echo y | sudo npm install -g create-react-app
 RUN echo y | sudo npm install -g firebase-cli
 
-RUN sudo npm install -g react-native-cli
-RUN curl -o StudioInstaller.sh https://raw.githubusercontent.com/letsfoss/Android-Studio-Installer-Script/master/StudioInstaller.sh
-RUN chmod +x StudioInstaller.sh
-RUN ./StudioInstaller.sh
+#RUN sudo npm install -g react-native-cli
+#RUN curl -o StudioInstaller.sh https://raw.githubusercontent.com/letsfoss/Android-Studio-Installer-Script/master/StudioInstaller.sh
+#RUN chmod +x StudioInstaller.sh
+#RUN ./StudioInstaller.sh
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
 # RUN code-server --install-extension esbenp.prettier-vscode
@@ -70,7 +70,7 @@ RUN sudo wget https://storage.googleapis.com/flutter_infra_release/releases/stab
 RUN sudo echo y | tar xf flutter_linux_3.0.5-stable.tar.xz
 RUN export PATH="$PATH:`pwd`/flutter/bin"
 #installing flutter
-RUN echo y | sudo apt-get install android-tools-adb android-tools-fastboot
+#RUN echo y | sudo apt-get install android-tools-adb android-tools-fastboot
 RUN mkdir blueprints
 
 #getting react native template
@@ -112,11 +112,11 @@ COPY --from=hashicorp/terraform:1.1.9 /bin/terraform /bin/
 RUN terraform version
 
 # Install awscli
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
-  && unzip -qq awscliv2.zip \
-  && sudo ./aws/install \
-  && rm -rf ./awscliv2.zip ./aws
-RUN aws --version
+#RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+#  && unzip -qq awscliv2.zip \
+#  && sudo ./aws/install \
+#  && rm -rf ./awscliv2.zip ./aws
+#RUN aws --version
 
 # Install kubectl
 RUN sudo apt-get update \
