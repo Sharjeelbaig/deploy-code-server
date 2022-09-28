@@ -17,8 +17,7 @@ RUN sudo apt-get install wget -y
 #RUN sudo mkdir /root/.npm
 #RUN echo y | sudo chown -R 1000:1000 "/root/.npm"
 #RUN echo y | sudo npx npm install -g expo-cli
-RUN echo y | sudo npm install -g create-react-app
-RUN echo y | sudo npm install -g firebase-cli
+
 
 
 
@@ -98,6 +97,11 @@ RUN mv react-app blueprints
 # Install NodeJS
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
 RUN sudo apt-get install -y nodejs
+
+#installing react
+RUN echo y | sudo npm install -g create-react-app
+RUN echo y | sudo npm install -g firebase-cli
+
 #Changing working dir
 WORKDIR /home/coder/main
 
