@@ -10,9 +10,7 @@ FROM codercom/code-server:4.4.0
 RUN sudo apt-get update \
  && sudo apt-get install -y unzip
 
-# Install NodeJS
-RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
-RUN sudo apt-get install -y nodejs
+
 
 RUN sudo apt-get install wget -y
 
@@ -95,31 +93,11 @@ RUN mv react-app blueprints
 #RUN expo init expo-app
 
 
-#swap
-#RUN curl https://raw.githubusercontent.com/Cretezy/Swap/master/swap.sh -o swap
-#RUN sudo sh swap 24G
 
 
-# Install terraform
-COPY --from=hashicorp/terraform:1.1.9 /bin/terraform /bin/
-RUN terraform version
-
-# Install awscli
-#RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
-#  && unzip -qq awscliv2.zip \
-#  && sudo ./aws/install \
-#  && rm -rf ./awscliv2.zip ./aws
-#RUN aws --version
-
-
-
-# install helm
-RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | sudo bash
-RUN helm version
-
-# fluxcli install
-RUN curl -s https://fluxcd.io/install.sh | sudo bash
-RUN flux --version
+# Install NodeJS
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
+RUN sudo apt-get install -y nodejs
 #Changing working dir
 WORKDIR /home/coder/main
 
