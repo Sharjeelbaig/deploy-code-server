@@ -89,10 +89,7 @@ RUN mv react-native blueprints
 #RUN mv react-native blueprints
 
 
-#react-app creation
-RUN create-react-app react-app
-RUN mv react-app blueprints
-#RUN expo init expo-app
+
 
 
 
@@ -102,6 +99,11 @@ RUN mv react-app blueprints
 #installing react
 RUN echo y | sudo npm install -g create-react-app
 RUN echo y | sudo npm install -g firebase-cli
+
+#react-app creation
+RUN create-react-app react-app
+RUN mv react-app blueprints
+#RUN expo init expo-app
 
 #Changing working dir
 WORKDIR /home/coder/main
