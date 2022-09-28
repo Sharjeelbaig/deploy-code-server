@@ -34,7 +34,7 @@ RUN ./StudioInstaller.sh
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-apt-get update
+RUN sudo apt-get update
 RUN echo y | sudo apt install python3-pip --fix-missing
 
 # Copy files: 
