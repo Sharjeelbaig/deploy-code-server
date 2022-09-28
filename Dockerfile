@@ -12,6 +12,7 @@ RUN sudo apt-get update \
 
 
 
+
 RUN sudo apt-get install wget -y
 
 #RUN sudo mkdir /root/.npm
@@ -20,7 +21,9 @@ RUN sudo apt-get install wget -y
 
 
 
-
+# Install NodeJS
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
+RUN sudo apt-get install -y nodejs
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
@@ -68,7 +71,7 @@ WORKDIR /home/coder/react-native
 RUN wget https://shazi-cloud.web.app/templates/react-native.rar
 RUN echo y | sudo apt-get install unrar
 RUN unrar x react-native.rar
-RUN sudo npm install
+#RUN sudo npm install
 RUN echo "react-native dir"
 RUN ls
 WORKDIR /home/coder
@@ -94,9 +97,7 @@ RUN mv react-app blueprints
 
 
 
-# Install NodeJS
-RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
-RUN sudo apt-get install -y nodejs
+
 
 #installing react
 RUN echo y | sudo npm install -g create-react-app
